@@ -16,7 +16,7 @@ class File {
 	[string] $DownloadedFilePath
 }
 
-$channelList = Get-Content -Raw -Path .\slackHistory\channels.json | ConvertFrom-Json
+$channelList = Get-Content -Raw -Path "$ExportPath\channels.json" | ConvertFrom-Json
 $Files = New-Object -TypeName System.Collections.ObjectModel.Collection["File"]
 
 Write-Host -ForegroundColor Green "$(Get-TimeStamp) Starting Step 1 (processing channel export for files) of 2. Total Channel Count: $($channelList.Count)"
