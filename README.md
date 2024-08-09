@@ -31,14 +31,6 @@ Export Slack Channel Files and update Slack JSON for use with slack2html
     + $ExportPath = "C:\Temp\slack\exported-data"
     ```
     > Note: If you don't edit the value, the script will look for exported Slack data in the following folder: `.\slackHistory`
-1. Edit the following line of code (currently line 19) as shown below.
-    ```diff
-    - $channelList = Get-Content -Raw -Path .\slackHistory\channels.json | ConvertFrom-Json
-    + $channelList = Get-Content -Raw -Path "$ExportPath\channels.json" | ConvertFrom-Json
-    ```
-    > Note: If you don't edit the line, the script will look for the exported Slack channel list in the following folder: `.\slackHistory`
-    >
-    > Note: This change may eventually be incorporated into the authoritative script, rendering this manual step unnecessary. For now, though, it is necessary.
 1. Save the changes to the file.
 
 ## 4. Run the PowerShell script
